@@ -1,8 +1,6 @@
 # SO3_Equivariant_ProteinMPNN
 ## 📌 Master Thesis on Geometric Deep Learning on Protein Design
-This is the code for the master thesis that introduce rotation invariant representation to ProteinMPNN
-
-
+This is the code for the master thesis on introducing rotation invariant representation to ProteinMPNN, supervised by <a href="https://www.imperial.ac.uk/people/s.angioletti-uberti">Professor Stefano Angioletti-Uberti</a>
 <!-- ABOUT THE RESEARCH -->
 <h2 id="about-the-research"> :pencil: About The Research</h2>
 
@@ -13,7 +11,7 @@ This is the code for the master thesis that introduce rotation invariant represe
 Building rotation invariant representation using [**Sperical Harmonics**](https://stevejtrettel.site/code/2022/spherical-harmonics), 3D coordinates of residule are expanded into radial and spherical basis, the combination of coefficients constitute an invariant representation.
 ![image](./images/Spherical_Expand.jpg)
 
-Sperical Harmonics Visualisation [site](https://stevejtrettel.site/code/2022/spherical-harmonics)
+Sperical Harmonics Visualisation [Website](https://stevejtrettel.site/code/2022/spherical-harmonics)
 
 ## Dataset
 Protein Data Bank
@@ -49,6 +47,9 @@ The following are the major open source packages utilised in this project:
 
 ## Future Work
 Benchmarking more physics-inspired representation methods
+
+## Acknowledgements
+My appreciation goes to Professor Stefano Angioletti-Uberti and PhD researcher Shanil from <a href="https://www.softnanolab.org/">SoftNanoLab</a> for their attentive guidance and great access to computing resources.
 
 ## Contributing
 If you have any questions or suggestions towards this repository, feel free to contact me at xy2119@ic.ac.uk.
