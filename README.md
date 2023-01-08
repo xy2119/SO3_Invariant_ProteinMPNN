@@ -13,6 +13,8 @@ Building rotation invariant representation using [**Sperical Harmonics**](https:
 
 Sperical Harmonics Visualisation [Website](https://stevejtrettel.site/code/2022/spherical-harmonics)
 
+
+
 ## Dataset
 Protein Data Bank
 
@@ -38,7 +40,7 @@ The following are the major open source packages utilised in this project:
       │    └── Spherical_Expand.jpg
       │    
       │
-      └── 
+      └── notebooks
 
 
 ## 🎯 RoadMap
