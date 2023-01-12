@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/rds/general/user/xy2119/home/ProteinMPNN/training/training.py", line 348, in <module>
+    main(args)   
+  File "/rds/general/user/xy2119/home/ProteinMPNN/training/training.py", line 221, in main
+    log_probs = model(X, S, mask, chain_M, residue_idx, chain_encoding_all, randn_1)
+  File "/rds/general/user/xy2119/home/anaconda3/envs/mlfold/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/rds/general/user/xy2119/home/ProteinMPNN/training/model_utils.py", line 950, in forward
+    h_V, h_E = layer(h_V, h_E, E_idx, mask, mask_attend)
+  File "/rds/general/user/xy2119/home/anaconda3/envs/mlfold/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/rds/general/user/xy2119/home/ProteinMPNN/training/model_utils.py", line 647, in forward
+    h_E = self.norm3(h_E + self.dropout3(h_message))
+  File "/rds/general/user/xy2119/home/anaconda3/envs/mlfold/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/rds/general/user/xy2119/home/anaconda3/envs/mlfold/lib/python3.10/site-packages/torch/nn/modules/normalization.py", line 190, in forward
+    return F.layer_norm(
+  File "/rds/general/user/xy2119/home/anaconda3/envs/mlfold/lib/python3.10/site-packages/torch/nn/functional.py", line 2515, in layer_norm
+    return torch.layer_norm(input, normalized_shape, weight, bias, eps, torch.backends.cudnn.enabled)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 232.00 MiB (GPU 0; 23.65 GiB total capacity; 22.51 GiB already allocated; 55.56 MiB free; 22.84 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

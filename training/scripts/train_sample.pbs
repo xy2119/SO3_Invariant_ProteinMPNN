@@ -1,0 +1,31 @@
+#PBS -N CA_SH_train_sample
+#PBS -l walltime=00:25:00
+#PBS -l select=1:ncpus=6:mem=64gb:ngpus=8:gpu_type=RTX6000
+cd $PBS_O_WORKDIR
+
+# Environment setups 
+module load anaconda3/personal
+module load cuda/11.4.2
+source activate mlfold
+
+
+# Check Environment
+nvidia-smi
+
+python -c "import torch;print(f'Is CUDA available? {torch.cuda.is_available()}')"
+
+mkdir -p ./CA_SH_train_sample
+
+
+START="$(date +%s)"
+
+python ~/ProteinMPNN/training/training.py \
+           --out_folder "./CA_SH_train_sample"\
+           --path_for_outputs "./CA_train_sample" \
+           --path_for_training_data "../../projects/001-protein-mpnn/001-test-training/pdb_2021aug02_sample" \
+           --num_examples_per_epoch 2000 \
+           --save_model_every_n_epochs 5 
+
+DURATION=$[ $(date +%s) - ${START} ]
+
+echo "Total duration was ${DURATION}s"
