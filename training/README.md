@@ -6,4 +6,4 @@
 
 1. Update the complete structural encoding, that include orientation and rotation for building the edge features, functiona are adopted from 
 protein_mpnn_run.py and protein_mpnn_utils.py 
-2. Update the feature pre-processing functions from `featurize` to `tied_featurize`, to enable 
+2. Update the feature pre-processing functions from `featurize` to `tied_featurize`
