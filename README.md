@@ -1,4 +1,4 @@
-# SO3_Equivariant_ProteinMPNN
+# SO3_Invariant_ProteinMPNN
 ## 📌 Master Thesis on Geometric Deep Learning on Protein Design
 This is the code for the master thesis on introducing rotation invariant representation to ProteinMPNN, supervised by <a href="https://www.imperial.ac.uk/people/s.angioletti-uberti">Professor Stefano Angioletti-Uberti</a>
 <!-- ABOUT THE RESEARCH -->
