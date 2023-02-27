@@ -8,7 +8,7 @@ This is the code for the master thesis on introducing rotation invariant represe
  
 ![image](./images/ProteinMPNN.png)
 
-Building rotation invariant representation using [**Sperical Harmonics**](https://stevejtrettel.site/code/2022/spherical-harmonics), 3D coordinates of residule are expanded into radial and spherical basis, the combination of coefficients constitute an invariant representation.
+Building rotation invariant representation using [**Sperical Harmonics**](https://stevejtrettel.site/code/2022/spherical-harmonics), 3D coordinates of residue are expanded into radial and spherical basis, the combination of coefficients constitute an invariant representation.
 ![image](./images/Spherical_Expand.jpg)
 
 Sperical Harmonics Visualisation [Website](https://stevejtrettel.site/code/2022/spherical-harmonics)
