@@ -758,17 +758,18 @@ class CA_ProteinFeatures(nn.Module):
         self.rsh_lmax = rsh_lmax
 
         node_in = 3
-
+        
         # Structural encoding
         if self.rsh_expand == True:
             edge_in = num_positional_embeddings + num_rbf*9 + (rsh_lmax+1)
-        elif self.rsh_expand ==False:
+        elif self.rsh_expand == "Only":
+            edge_in = num_positional_embeddings + (rsh_lmax+1)
+        elif self.rsh_expand == False:
             edge_in = num_positional_embeddings + num_rbf*9 + 3 + 4
         elif self.rsh_expand == "Cartesian":
             edge_in = num_positional_embeddings + num_rbf*9 + 3 
         else:
-            edge_in = num_positional_embeddings + num_rbf*9
-            
+            edge_in = num_positional_embeddings + num_rbf*9    
 
         # Normalization and embedding
         self.node_embedding = nn.Linear(node_in,  node_features, bias=False) #NOT USED
@@ -809,8 +810,8 @@ class CA_ProteinFeatures(nn.Module):
         for l in range(l_max+1):
             for m in range(-l, l+1):
                 # expansion coefficient for the given l and m
-                coef=self._Y_lm(l, m, theta, phi)/torch.from_numpy(r)
-                expand_coef[:,l] +=  (coef*coef.conj()).detach()     
+                coef=self._Y_lm(l, m, theta, phi)
+                expand_coef[:,l] +=  ((coef*coef.conj())/torch.from_numpy(r)).detach()     
         
         invariant= expand_coef.reshape((coordinates.shape[0],coordinates.shape[1],(l_max+1)))
         invariant[torch.isnan(invariant)] = eps
@@ -1010,6 +1011,8 @@ class ProteinFeatures(nn.Module):
         # Structural encoding
         if self.rsh_expand == True:
             edge_in = num_positional_embeddings + num_rbf*25 + (rsh_lmax+1)
+        elif self.rsh_expand == "Only":
+            edge_in = num_positional_embeddings + (rsh_lmax+1)
         elif self.rsh_expand == False:
             edge_in = num_positional_embeddings + num_rbf*25 + 3 + 4
         elif self.rsh_expand == "Cartesian":
@@ -1054,8 +1057,8 @@ class ProteinFeatures(nn.Module):
         for l in range(l_max+1):
             for m in range(-l, l+1):
                 # expansion coefficient for the given l and m
-                coef=self._Y_lm(l, m, theta, phi)/torch.from_numpy(r)
-                expand_coef[:,l] +=  (coef*coef.conj()).detach()     
+                coef=self._Y_lm(l, m, theta, phi)
+                expand_coef[:,l] +=  ((coef*coef.conj())/torch.from_numpy(r)).detach()     
         
         invariant= expand_coef.reshape((coordinates.shape[0],coordinates.shape[1],(l_max+1)))
         invariant[torch.isnan(invariant)] = eps
