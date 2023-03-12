@@ -87,38 +87,52 @@ For example to make a conda environment to run ProteinMPNN:
 ## Model Options
 Models were trained for the SO3 Invariant ProteinMPNN using the following input flags. The original training repository can be accessed at [link](https://github.com/dauparas/ProteinMPNN/tree/main/training).
  
-
+### Ca_benchmark
 #### Carbon alpha based geometry trained with Radial Basis Function Lifting (RBF)
-* `Ca_benchmark.pt`  `--ca_only True --rsh_expand None `
 
+* `Ca_benchmark.pt`        
+  `--ca_only True --rsh_expand None `
+
+### Ca_OR
 #### Carbon alpha based geometry trained with RBF + Orientation and Rotation representation
-* `Ca_OR.pt`  `--ca_only True --rsh_expand False `
+* `Ca_OR.pt`  
+  `--ca_only True --rsh_expand False `
 
-#### Carbon alpha based geometry trained with RBF + Real Spherical Harmonics representation(expanded through 3 degrees)
-* `Ca_RSH3`  `--ca_only True --rsh_expand True --rsh_lmax 3 `
+### Ca_RSH3
+#### Carbon alpha based geometry trained with RBF + Real Spherical Harmonics representation (expanded through 3 degrees)
+* `Ca_RSH3`  
+  `--ca_only True --rsh_expand True --rsh_lmax 3 `
 
+### Ca_RSH4
 #### Carbon alpha based geometry trained with RBF + Real Spherical Harmonics representation (expanded through 4 degrees)
-* `Ca_RSH4`  `--ca_only True --rsh_expand True --rsh_lmax 4 `
+* `Ca_RSH4`  
+  `--ca_only True --rsh_expand True --rsh_lmax 4 `
 
 #### Carbon alpha based geometry trained with RBF + Real Spherical Harmonics representation (expanded through 5 degrees)
-* `Ca_RSH5`  `--ca_only True --rsh_expand True --rsh_lmax 5 `
+* `Ca_RSH5` 
+  `--ca_only True --rsh_expand True --rsh_lmax 5 `
 
 ---
 
 #### Full backbone geometry trained with Radial Basis Function Lifting (RBF)
-* `vanilla_benchmark.pt`  `--ca_only False --rsh_expand None `
+* `vanilla_benchmark.pt`  
+  `--ca_only False --rsh_expand None `
 
 #### Full backbone geometry trained with RBF + Orientation and Rotation representation
-* `vanilla_OR.pt`  `--ca_only False --rsh_expand False `
+* `vanilla_OR.pt`  
+  `--ca_only False --rsh_expand False `
 
 #### Full backbone geometry trained with RBF + Real Spherical Harmonics representation (expanded through 3 degrees)
-* `vanilla_RSH3`  `--ca_only False --rsh_expand True --rsh_lmax 3 `
+* `vanilla_RSH3`  
+  `--ca_only False --rsh_expand True --rsh_lmax 3 `
 
 #### Full backbone geometry trained with RBF + Real Spherical Harmonics representation (expanded through 4 degrees)
-* `vanilla_RSH4`  `--ca_only False --rsh_expand True --rsh_lmax 4 `
+* `vanilla_RSH4`  
+  `--ca_only False --rsh_expand True --rsh_lmax 4 `
 
 #### Full backbone geometry trained with RBF + Real Spherical Harmonics representation (expanded through 5 degrees)
-* `vanilla_RSH5`  `--ca_only False --rsh_expand True --rsh_lmax 5 `
+* `vanilla_RSH5`  
+  `--ca_only False --rsh_expand True --rsh_lmax 5 `
 
 
  -----------------------------------------------------------------------------------------------------
