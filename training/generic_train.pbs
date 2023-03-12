@@ -1,0 +1,38 @@
+#PBS -N generic_Ca_RSH4
+#PBS -l walltime=72:00:00
+#PBS -l select=1:ncpus=24:mem=256gb:ngpus=1:gpu_type=RTX6000
+
+cd $PBS_O_WORKDIR
+
+# Environment setups 
+module load anaconda3/personal
+module load cuda/11.4.2
+source activate mlfold
+
+# Check Environment
+nvidia-smi
+
+python -c "import torch;print(f'Is CUDA available? {torch.cuda.is_available()}')"
+
+mkdir -p ./generic_Ca_RSH4
+
+
+START="$(date +%s)"
+python ~/ProteinMPNN/generic_training/generic_train.py \
+           --out_folder "./generic_Ca_RSH4"\
+           --path_for_training_data "../../projects/001-protein-mpnn/001-test-training/pdb_2021aug02" \
+           --ca_only True \
+           --rsh_expand True \
+           --rsh_lmax 4 \
+           --batch_size 10000 \
+           --num_examples_per_epoch 1000000 \
+           --save_model_every_n_epochs 10 \
+           --num_epochs 150 \
+           --gradient_norm 1 \
+           
+
+DURATION=$[ $(date +%s) - ${START} ]
+
+echo "Total duration was ${DURATION}s"
+
+

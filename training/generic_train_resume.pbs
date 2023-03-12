@@ -1,0 +1,38 @@
+#PBS -N generic_vanilla_benchmark_resumed
+#PBS -l walltime=25:00:00
+#PBS -l select=1:ncpus=24:mem=128gb:ngpus=1:gpu_type=RTX6000
+
+cd $PBS_O_WORKDIR
+
+# Environment setups 
+module load anaconda3/personal
+module load cuda/11.4.2
+source activate mlfold
+
+# Check Environment
+nvidia-smi
+
+python -c "import torch;print(f'Is CUDA available? {torch.cuda.is_available()}')"
+
+
+
+
+START="$(date +%s)"
+python ~/ProteinMPNN/generic_training/generic_train_test.py \
+           --out_folder "./generic_vanilla_benchmark"\
+           --path_for_training_data "../../projects/001-protein-mpnn/001-test-training/pdb_2021aug02" \
+           --ca_only False \
+           --rsh_expand None \
+           --rsh_lmax 4 \
+           --batch_size 10000 \
+           --num_examples_per_epoch 1000000 \
+           --save_model_every_n_epochs 10 \
+           --num_epochs 25 \
+           --gradient_norm 1 \
+           --previous_checkpoint epoch_last.pt 
+
+DURATION=$[ $(date +%s) - ${START} ]
+
+echo "Total duration was ${DURATION}s"
+
+

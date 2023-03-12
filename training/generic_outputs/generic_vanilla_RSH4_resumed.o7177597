@@ -1,0 +1,109 @@
+Fri Mar 10 01:01:14 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 510.60.02    Driver Version: 510.60.02    CUDA Version: 11.6     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 6000     On   | 00000000:01:00.0 Off |                  Off |
+| 51%   72C    P2   258W / 260W |  24104MiB / 24576MiB |     96%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  Quadro RTX 6000     On   | 00000000:25:00.0 Off |                  Off |
+| 33%   35C    P8    21W / 260W |  19884MiB / 24576MiB |      0%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   2  Quadro RTX 6000     On   | 00000000:41:00.0 Off |                  Off |
+| 43%   67C    P2   245W / 260W |  22516MiB / 24576MiB |     94%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   3  Quadro RTX 6000     On   | 00000000:61:00.0 Off |                  Off |
+| 34%   60C    P2   215W / 260W |    324MiB / 24576MiB |     93%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   4  Quadro RTX 6000     On   | 00000000:81:00.0 Off |                  Off |
+| 46%   69C    P2   247W / 260W |  19798MiB / 24576MiB |     90%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   5  Quadro RTX 6000     On   | 00000000:A1:00.0 Off |                  Off |
+| 33%   33C    P8    30W / 260W |      1MiB / 24576MiB |      0%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   6  Quadro RTX 6000     On   | 00000000:C1:00.0 Off |                  Off |
+| 38%   63C    P2   213W / 260W |    324MiB / 24576MiB |     94%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   7  Quadro RTX 6000     On   | 00000000:E1:00.0 Off |                  Off |
+| 39%   64C    P2   215W / 260W |    324MiB / 24576MiB |     95%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A   2333770      C   python                          24101MiB |
+|    1   N/A  N/A   2314505      C   python3                         19881MiB |
+|    2   N/A  N/A   2369732      C   python                          22513MiB |
+|    3   N/A  N/A   3785359      C   ./pluto                           321MiB |
+|    4   N/A  N/A   2632548      C   python                          19795MiB |
+|    6   N/A  N/A   3744358      C   ./pluto                           321MiB |
+|    7   N/A  N/A   2588978      C   ./pluto                           321MiB |
++-----------------------------------------------------------------------------+
+Is CUDA available? True
+ca_only: False rsh_expand: True rsh_lmax: 4
+Model is set
+epoch: 118, step: 526167, time: 2192.2, train: 4.993, valid: 4.954, train_acc: 0.499, valid_acc: 0.499
+epoch: 119, step: 530631, time: 2193.1, train: 4.980, valid: 4.944, train_acc: 0.500, valid_acc: 0.500
+epoch: 120, step: 535095, time: 2191.8, train: 4.977, valid: 4.942, train_acc: 0.500, valid_acc: 0.500
+epoch: 121, step: 539559, time: 2190.3, train: 4.969, valid: 4.943, train_acc: 0.501, valid_acc: 0.500
+epoch: 122, step: 544023, time: 2189.0, train: 4.968, valid: 4.928, train_acc: 0.501, valid_acc: 0.501
+epoch: 123, step: 548487, time: 2190.5, train: 4.959, valid: 4.935, train_acc: 0.501, valid_acc: 0.500
+epoch: 124, step: 552951, time: 2188.1, train: 4.955, valid: 4.922, train_acc: 0.501, valid_acc: 0.501
+epoch: 125, step: 557415, time: 2189.9, train: 4.956, valid: 4.942, train_acc: 0.501, valid_acc: 0.500
+epoch: 126, step: 561879, time: 2186.8, train: 4.947, valid: 4.942, train_acc: 0.502, valid_acc: 0.500
+epoch: 127, step: 566343, time: 2189.5, train: 4.948, valid: 4.926, train_acc: 0.502, valid_acc: 0.502
+epoch: 128, step: 570807, time: 2186.2, train: 4.942, valid: 4.942, train_acc: 0.502, valid_acc: 0.500
+epoch: 129, step: 575271, time: 2186.3, train: 4.941, valid: 4.947, train_acc: 0.502, valid_acc: 0.500
+epoch: 130, step: 579735, time: 2186.3, train: 4.940, valid: 4.946, train_acc: 0.502, valid_acc: 0.500
+epoch: 131, step: 584199, time: 2190.1, train: 4.931, valid: 4.934, train_acc: 0.503, valid_acc: 0.500
+epoch: 132, step: 588663, time: 2188.2, train: 4.930, valid: 4.920, train_acc: 0.503, valid_acc: 0.501
+epoch: 133, step: 593127, time: 2188.8, train: 4.926, valid: 4.932, train_acc: 0.503, valid_acc: 0.501
+epoch: 134, step: 597591, time: 2188.9, train: 4.928, valid: 4.961, train_acc: 0.503, valid_acc: 0.500
+epoch: 135, step: 602055, time: 2188.0, train: 4.928, valid: 4.923, train_acc: 0.503, valid_acc: 0.501
+epoch: 136, step: 606519, time: 2187.5, train: 4.918, valid: 4.920, train_acc: 0.504, valid_acc: 0.501
+epoch: 137, step: 610983, time: 2190.1, train: 4.916, valid: 4.922, train_acc: 0.504, valid_acc: 0.501
+epoch: 138, step: 615447, time: 2186.6, train: 4.914, valid: 4.922, train_acc: 0.504, valid_acc: 0.501
+epoch: 139, step: 619911, time: 2187.0, train: 4.914, valid: 4.926, train_acc: 0.504, valid_acc: 0.501
+epoch: 140, step: 624375, time: 2184.2, train: 4.912, valid: 4.901, train_acc: 0.504, valid_acc: 0.503
+epoch: 141, step: 628839, time: 2188.0, train: 4.908, valid: 4.913, train_acc: 0.504, valid_acc: 0.502
+epoch: 142, step: 633303, time: 2186.5, train: 4.906, valid: 4.921, train_acc: 0.504, valid_acc: 0.501
+epoch: 143, step: 637767, time: 2188.2, train: 4.905, valid: 4.932, train_acc: 0.505, valid_acc: 0.501
+epoch: 144, step: 642231, time: 2183.8, train: 4.906, valid: 4.921, train_acc: 0.504, valid_acc: 0.501
+epoch: 145, step: 646695, time: 2186.3, train: 4.902, valid: 4.910, train_acc: 0.505, valid_acc: 0.502
+epoch: 146, step: 651159, time: 2185.6, train: 4.900, valid: 4.904, train_acc: 0.505, valid_acc: 0.503
+epoch: 147, step: 655623, time: 2184.7, train: 4.896, valid: 4.912, train_acc: 0.505, valid_acc: 0.502
+epoch: 148, step: 660087, time: 2183.6, train: 4.896, valid: 4.921, train_acc: 0.505, valid_acc: 0.502
+epoch: 149, step: 664551, time: 2183.0, train: 4.895, valid: 4.903, train_acc: 0.505, valid_acc: 0.502
+epoch: 150, step: 669015, time: 2181.5, train: 4.890, valid: 4.920, train_acc: 0.506, valid_acc: 0.502
+epoch: 151, step: 673479, time: 2183.2, train: 4.891, valid: 4.934, train_acc: 0.505, valid_acc: 0.501
+epoch: 152, step: 677943, time: 2180.2, train: 4.886, valid: 4.920, train_acc: 0.506, valid_acc: 0.502
+epoch: 153, step: 682407, time: 2183.7, train: 4.886, valid: 4.894, train_acc: 0.506, valid_acc: 0.503
+epoch: 154, step: 686871, time: 2181.7, train: 4.883, valid: 4.881, train_acc: 0.506, valid_acc: 0.504
+epoch: 155, step: 691335, time: 2183.3, train: 4.884, valid: 4.898, train_acc: 0.506, valid_acc: 0.503
+epoch: 156, step: 695799, time: 2180.7, train: 4.883, valid: 4.885, train_acc: 0.506, valid_acc: 0.504
+epoch: 157, step: 700263, time: 2184.6, train: 4.877, valid: 4.914, train_acc: 0.506, valid_acc: 0.502
+epoch: 158, step: 704727, time: 2184.5, train: 4.878, valid: 4.945, train_acc: 0.506, valid_acc: 0.500
+epoch: 159, step: 709191, time: 2184.8, train: 4.874, valid: 4.906, train_acc: 0.507, valid_acc: 0.502
+epoch: 160, step: 713655, time: 2183.3, train: 4.873, valid: 4.910, train_acc: 0.507, valid_acc: 0.502
+epoch: 161, step: 718119, time: 2183.8, train: 4.877, valid: 4.913, train_acc: 0.506, valid_acc: 0.502
+epoch: 162, step: 722583, time: 2182.4, train: 4.872, valid: 4.912, train_acc: 0.507, valid_acc: 0.502
+epoch: 163, step: 727047, time: 2184.1, train: 4.871, valid: 4.903, train_acc: 0.507, valid_acc: 0.502
+epoch: 164, step: 731511, time: 2182.9, train: 4.864, valid: 4.894, train_acc: 0.507, valid_acc: 0.503
+epoch: 165, step: 735975, time: 2184.5, train: 4.863, valid: 4.896, train_acc: 0.507, valid_acc: 0.503
+epoch: 166, step: 740439, time: 2179.9, train: 4.866, valid: 4.910, train_acc: 0.507, valid_acc: 0.502
+epoch: 167, step: 744903, time: 2184.2, train: 4.859, valid: 4.890, train_acc: 0.507, valid_acc: 0.503
+Total duration for training and validation: 109349.3s
+Total duration was 110909s
