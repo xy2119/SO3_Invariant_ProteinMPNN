@@ -8,10 +8,10 @@ This is the code for the master thesis on introducing rotation invariant represe
  
 ![image](./images/ProteinMPNN.png)
 
-Building rotation invariant representation using [**Sperical Harmonics**](https://stevejtrettel.site/code/2022/spherical-harmonics), 3D coordinates of residue are expanded into radial and spherical basis, the combination of coefficients constitute an invariant representation.
+Building rotation invariant representation using [**Spherical Harmonics**](https://stevejtrettel.site/code/2022/spherical-harmonics), 3D coordinates of residue are expanded into radial and spherical basis, the combination of coefficients constitute an invariant representation.
 ![image](./images/Spherical_Expand.jpg)
 
-Sperical Harmonics Visualisation [Website](https://stevejtrettel.site/code/2022/spherical-harmonics)
+Spherical Harmonics Visualisation [Website](https://stevejtrettel.site/code/2022/spherical-harmonics)
 
 
 
@@ -35,12 +35,11 @@ The following are the major open source packages utilised in this project:
 
 
 ```
-📦 SO3_Invariant_ProteinMPNN
+📦 
 ├─ .ipynb_checkpoints
 │  ├─ README-checkpoint.md
 │  ├─ protein_mpnn_run-checkpoint.py
 │  └─ protein_mpnn_utils-checkpoint.py
-├─ Group_Theory.pdf
 ├─ LICENSE
 ├─ README.md
 ├─ UniProt
@@ -51,12 +50,42 @@ The following are the major open source packages utilised in this project:
 │  └─ protein_mpnn_utils.cpython-38.pyc
 ├─ ca_model_weights
 │  ├─ .DS_Store
-│  ├─ Ca_OR_100e.pt
-│  ├─ Ca_RSH3_100e.pt
+│  ├─ Ca_OR.pt
+│  ├─ Ca_RSH1.pt
+│  ├─ Ca_RSH2.pt
+│  ├─ Ca_RSH3.pt
+│  ├─ Ca_RSH4.pt
+│  ├─ Ca_RSH5.pt
+│  ├─ Ca_RSH6.pt
+│  ├─ Ca_benchmark.pt
+│  ├─ log
+│  │  ├─ Ca_OR_log.txt
+│  │  ├─ Ca_RSH3_log.txt
+│  │  ├─ Ca_RSH4_log.txt
+│  │  ├─ Ca_RSH5_log.txt
+│  │  ├─ Ca_RSH6_log.txt
+│  │  ├─ Ca_benchmark_log.txt
+│  │  └─ training_comparison.html
 │  ├─ v_48_002.pt
 │  ├─ v_48_010.pt
 │  └─ v_48_020.pt
 ├─ dataset
+│  ├─ stats
+│  │  ├─ test
+│  │  │  ├─ CATH_1_histogram.html
+│  │  │  ├─ CATH_2_histogram.html
+│  │  │  ├─ CATH_3_histogram.html
+│  │  │  └─ sequence_length_histogram.html
+│  │  ├─ train
+│  │  │  ├─ CATH_1_histogram.html
+│  │  │  ├─ CATH_2_histogram.html
+│  │  │  ├─ CATH_3_histogram.html
+│  │  │  └─ sequence_length_histogram.html
+│  │  └─ valid
+│  │     ├─ CATH_1_histogram.html
+│  │     ├─ CATH_2_histogram.html
+│  │     ├─ CATH_3_histogram.html
+│  │     └─ sequence_length_histogram.html
 │  ├─ test_hetero.csv
 │  └─ test_homo.csv
 ├─ examples
@@ -101,11 +130,14 @@ The following are the major open source packages utilised in this project:
 │        ├─ 5L33.pdb
 │        └─ 6MRR.pdb
 ├─ notebooks
-│  ├─ PDB_Spherical_Harmonics_processing.ipynb
-│  ├─ ProteinMPNN_Spherical_Harmonics_train.ipynb
-│  ├─ demo_CA_SH_wAF2.ipynb
-│  ├─ find_pdb_domain.ipynb
-│  └─ mpnn_wAF2.py
+│  ├─ .ipynb_checkpoints
+│  │  ├─ SO3_invariant_representations-checkpoint.ipynb
+│  │  └─ mpnn_wAF2-checkpoint.py
+│  ├─ ProteinMPNN_EDA.ipynb
+│  ├─ SO3_invariant_representations.ipynb
+│  ├─ mpnn_wAF2.py
+│  ├─ pipeline_demo.ipynb
+│  └─ retrieve_pdb_domain.ipynb
 ├─ outputs
 │  ├─ example_1_outputs
 │  │  ├─ parsed_pdbs.jsonl
@@ -167,33 +199,146 @@ The following are the major open source packages utilised in this project:
 │  └─ training_test_output
 │     └─ seqs
 │        └─ 5L33.fa
+├─ presentation
+│  ├─ .ipynb_checkpoints
+│  │  └─ Group_Theory-checkpoint.pdf
+│  ├─ Group_Theory.pdf
+│  ├─ vanilla_RSH4
+│  │  ├─ output
+│  │  │  └─ 1O91
+│  │  │     ├─ out_seq_0_model_0.pdb
+│  │  │     ├─ out_seq_1_model_0.pdb
+│  │  │     ├─ out_seq_2_model_0.pdb
+│  │  │     ├─ out_seq_3_model_0.pdb
+│  │  │     ├─ out_seq_4_model_0.pdb
+│  │  │     ├─ out_seq_5_model_0.pdb
+│  │  │     ├─ out_seq_6_model_0.pdb
+│  │  │     └─ out_seq_7_model_0.pdb
+│  │  ├─ probs
+│  │  │  └─ 1O91
+│  │  │     ├─ 1O91.npz
+│  │  │     ├─ log_probs.html
+│  │  │     └─ probs.html
+│  │  ├─ scores
+│  │  │  └─ 1O91
+│  │  │     └─ 1O91.npz
+│  │  └─ seqs
+│  │     └─ 1O91
+│  │        └─ 1O91.fa
+│  └─ weekly_notes.pdf
 ├─ protein_mpnn_run.py
 ├─ protein_mpnn_utils.py
+├─ results
+│  ├─ Ca_OR_histograms_CATH_1.html
+│  ├─ Ca_OR_histograms_CATH_2.html
+│  ├─ Ca_OR_histograms_CATH_3.html
+│  ├─ Ca_OR_test_hetero_mpnn_result.csv
+│  ├─ Ca_OR_test_homo_mpnn_result.csv
+│  ├─ Ca_RSH3_histograms_CATH_1.html
+│  ├─ Ca_RSH3_histograms_CATH_2.html
+│  ├─ Ca_RSH3_histograms_CATH_3.html
+│  ├─ Ca_RSH3_test_hetero_mpnn_result.csv
+│  ├─ Ca_RSH3_test_homo_mpnn_result.csv
+│  ├─ Ca_RSH4_histograms_CATH_1.html
+│  ├─ Ca_RSH4_histograms_CATH_2.html
+│  ├─ Ca_RSH4_histograms_CATH_3.html
+│  ├─ Ca_RSH4_test_hetero_mpnn_result.csv
+│  ├─ Ca_RSH4_test_homo_mpnn_result.csv
+│  ├─ Ca_RSH5_histograms_CATH_1.html
+│  ├─ Ca_RSH5_histograms_CATH_2.html
+│  ├─ Ca_RSH5_histograms_CATH_3.html
+│  ├─ Ca_RSH5_test_hetero_mpnn_result.csv
+│  ├─ Ca_RSH5_test_homo_mpnn_result.csv
+│  ├─ Ca_benchmark_histograms_CATH_1.html
+│  ├─ Ca_benchmark_histograms_CATH_2.html
+│  ├─ Ca_benchmark_histograms_CATH_3.html
+│  ├─ Ca_benchmark_test_hetero_mpnn_result.csv
+│  ├─ Ca_benchmark_test_homo_mpnn_result.csv
+│  ├─ Ca_model_CATH_1_hist_comparison.html
+│  ├─ Ca_model_CATH_1_table.html
+│  ├─ Ca_model_CATH_1_violin_comparison.html
+│  ├─ Ca_model_CATH_2_hist_comparison.html
+│  ├─ Ca_model_CATH_2_table.html
+│  ├─ Ca_model_CATH_2_violin_comparison.html
+│  ├─ Ca_model_CATH_3_hist_comparison.html
+│  ├─ Ca_model_CATH_3_table.html
+│  ├─ Ca_model_CATH_3_violin_comparison.html
+│  ├─ Ca_training_comparison.html
+│  ├─ ProteinMPNN_EDA.ipynb
+│  ├─ vanilla_OR_histograms_CATH_1.html
+│  ├─ vanilla_OR_histograms_CATH_2.html
+│  ├─ vanilla_OR_histograms_CATH_3.html
+│  ├─ vanilla_OR_test_hetero_mpnn_result.csv
+│  ├─ vanilla_OR_test_homo_mpnn_result.csv
+│  ├─ vanilla_RSH3_histograms_CATH_1.html
+│  ├─ vanilla_RSH3_histograms_CATH_2.html
+│  ├─ vanilla_RSH3_histograms_CATH_3.html
+│  ├─ vanilla_RSH3_test_hetero_mpnn_result.csv
+│  ├─ vanilla_RSH3_test_homo_mpnn_result.csv
+│  ├─ vanilla_RSH4_histograms_CATH_1.html
+│  ├─ vanilla_RSH4_histograms_CATH_2.html
+│  ├─ vanilla_RSH4_histograms_CATH_3.html
+│  ├─ vanilla_RSH4_test_hetero_mpnn_result.csv
+│  ├─ vanilla_RSH4_test_homo_mpnn_result.csv
+│  ├─ vanilla_RSH5_histograms_CATH_1.html
+│  ├─ vanilla_RSH5_histograms_CATH_2.html
+│  ├─ vanilla_RSH5_histograms_CATH_3.html
+│  ├─ vanilla_RSH5_test_hetero_mpnn_result.csv
+│  ├─ vanilla_RSH5_test_homo_mpnn_result.csv
+│  ├─ vanilla_benchmark_histograms_CATH_1.html
+│  ├─ vanilla_benchmark_histograms_CATH_2.html
+│  ├─ vanilla_benchmark_histograms_CATH_3.html
+│  ├─ vanilla_benchmark_test_hetero_mpnn_result.csv
+│  ├─ vanilla_benchmark_test_homo_mpnn_result.csv
+│  ├─ vanilla_model_CATH_1_hist_comparison.html
+│  ├─ vanilla_model_CATH_1_table.html
+│  ├─ vanilla_model_CATH_1_violin_comparison.html
+│  ├─ vanilla_model_CATH_2_hist_comparison.html
+│  ├─ vanilla_model_CATH_2_table.html
+│  ├─ vanilla_model_CATH_2_violin_comparison.html
+│  ├─ vanilla_model_CATH_3_hist_comparison.html
+│  ├─ vanilla_model_CATH_3_table.html
+│  ├─ vanilla_model_CATH_3_violin_comparison.html
+│  └─ vanilla_training_comparison.html
 ├─ training
-│  ├─ LICENSE
+│  ├─ .ipynb_checkpoints
+│  │  ├─ README-checkpoint.md
+│  │  ├─ generic_train-checkpoint.pbs
+│  │  └─ generic_train-checkpoint.py
 │  ├─ README.md
-│  ├─ colab_training_example.ipynb
-│  ├─ exp_020
-│  │  ├─ log.txt
-│  │  └─ model_weights
-│  │     └─ epoch_last.pt
-│  ├─ model_utils.py
-│  ├─ plot_training_results.ipynb
-│  ├─ submit_exp_020.sh
-│  ├─ test_inference.sh
-│  ├─ training.py
+│  ├─ generic_model_utils.py
+│  ├─ generic_outputs
+│  │  ├─ generic_vanilla_RSH4.e7150422
+│  │  ├─ generic_vanilla_RSH4.o7150422
+│  │  ├─ generic_vanilla_RSH4_resumed.e7177597
+│  │  └─ generic_vanilla_RSH4_resumed.o7177597
+│  ├─ generic_train.pbs
+│  ├─ generic_train.py
+│  ├─ generic_train_resume.pbs
 │  └─ utils.py
-├─ vanilla_model_weights
-│  ├─ v_48_002.pt
-│  ├─ v_48_010.pt
-│  ├─ v_48_020.pt
-│  ├─ v_48_030.pt
-│  ├─ vanilla_OR_100e.pt
-│  ├─ vanilla_RSH3_100e.pt
-│  └─ vanilla_RSH4_100e.pt
-└─ weekly_notes.pdf
+└─ vanilla_model_weights
+   ├─ log
+   │  ├─ training_comparison.html
+   │  ├─ vanilla_OR_log.txt
+   │  ├─ vanilla_RSH3_log.txt
+   │  ├─ vanilla_RSH4_log.txt
+   │  ├─ vanilla_RSH5_log.txt
+   │  ├─ vanilla_RSH6_log.txt
+   │  └─ vanilla_benchmark_log.txt
+   ├─ v_48_002.pt
+   ├─ v_48_010.pt
+   ├─ v_48_020.pt
+   ├─ v_48_030.pt
+   ├─ vanilla_OR.pt
+   ├─ vanilla_RSH1.pt
+   ├─ vanilla_RSH2.pt
+   ├─ vanilla_RSH3.pt
+   ├─ vanilla_RSH4.pt
+   ├─ vanilla_RSH5.pt
+   ├─ vanilla_RSH6.pt
+   └─ vanilla_benchmark.pt
 ```
-
+ 
 
 ## 🎯 RoadMap
 
