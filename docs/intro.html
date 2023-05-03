@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xinyan's Reasearch Profile by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+					<!-- Logo -->
+						<div id="logo">
+							
+							<p style="font-size:60px">  </p>
+							<h1><a href="index.html">Xinyan Ye</a></h1>
+							<p style="font-size:21px">Imperial College London</p>
+							<p style="font-size:21px">Molecular Representation & Geometric Deep Learning</p>
+							<p style="font-size:10px">  </p>
+							
+							<ul class="icons">
+								
+								<a href="https://www.linkedin.com/in/xy2119" class="icon brands fa-linkedin alt" align="middle"></a>
+								<a href="https://github.com/xy2119" class="icon brands fa-github alt" align="middle"></a>
+								<a href="https://twitter.com/Xinyan_xy2119" class="icon brands fa-twitter alt" align="middle" style=></a>
+								
+							</ul>
+						</div>
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="intro.html">Introduction</a></li>
+								<li><a href="background.html">Background</a></li>
+								<li><a href="method.html">Methodology</a></li>
+								<li><a href="experiments.html">Experiments</a></li>
+								<li>
+									<a href="aboutme.html">About Me</a>
+									<ul>
+										<li><a href="aboutme.html#edu">Education</a></li>
+										<li><a href="aboutme.html#main">Highlights</a></li>
+										<li><a href="aboutme.html#ambitions">Ambitions</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+
+				</section>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style2">
+					<div><h1 class="title">Introduction</h1></div>
+					<div class="container">
+						<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<header class="style1">
+										<h2>Geometric Deep Learning on Protein Design</h2>
+										<p style="font-size:25px; color:grey">Supervisor: <a href="https://www.imperial.ac.uk/people/s.angioletti-uberti">Prof. Stefano Angioletti-Uberti</a></p>
+										<p style="font-size:22px; color:grey">Protein Folding | Deep Neural Networks | Curse of Dimensionality | Representation Learning</p>
+										<p style="font-size:22px; color:grey">Building Rotation Invariant Representation for Inverse Protein Folding Using Spherical Harmonics</p>
+									</header>
+									
+									<p id="list" style="font-size:25px; color:#484d55">List of Contents</p>
+									<ol style="text-align: left">
+										<li><a href="#1" style="color:#484d55">Protein Folding</a></li>
+										<li><a href="#2" style="color:#484d55">Protein Structure Determination</a></li>
+										<li><a href="#3" style="color:#484d55">Traditional and Deep Learning Approaches in Protein Design</a></li>
+										<li><a href="#highlights" style="color:#484d55">Train of Thought</a></li>
+									</ol>
+									
+									<header class="style2" align="left">
+										<p style="font-size:50px">	</p>
+										<p id="1" style="font-size:25px; color:#484d55">Protein Folding</p>
+									</header>
+									<p style="font-size:20px; color:#484d55">Proteins are complex biomolecules that exhibit a wide range of structural and functional diversity due to their evolution over billions of years. The primary structure of a protein is its amino acid sequence, the secondary structure is the way in which the protein chain folds into specific shapes, and the tertiary structure is the overall three-dimensional shape of the protein.</p>
+									<p style="font-size:20px; color:#484d55">Protein folding is the process by which a protein molecule adopts its specific, biologically active three-dimensional structure from a random coil. Proteins are made up of long chains of amino acids that are joined together by peptide bonds. When a protein is synthesized, the amino acid chain is initially in a disordered, random state. In order to function correctly, the protein must fold into a specific, three-dimensional structure that is determined by the sequence of its amino acids. Protein folding is influenced by various factors, including the physical and chemical properties of the amino acids, the presence of other molecules, and the protein's environment.</p>
+									<p style="font-size:20px; color:#484d55">From a biochemical perspective,  protein folding is driven by the formation of weak, non-covalent interactions between different parts of the protein, such as hydrophobic interactions, hydrogen bonds, and electrostatic interactions. These interactions help stabilize the folded protein structure and give it the specific shape and function required for its role in the cell. Hydrophobic residues, which have nonpolar side chains that are not attracted to water, tend to be buried in the protein's interior during folding to minimize their unfavorable interactions with water. This burial of hydrophobic residues greatly limits the number of possible conformations the protein can assume and allows it to fold rapidly. Hydrogen bonding and electrostatic interactions can lead to the formation of secondary structure elements, such as alpha helices or beta sheets, which provide additional stability to the protein. The protein may also form tertiary structure elements, such as the packing of the interior and the fixation of surface loops.</p>
+
+									<p style="font-size:20px; color:#484d55">From a physical science perspective, protein folding can be viewed as a thermodynamic process in which the protein molecule transitions from an unfolded state with high entropy to a folded state with lower entropy. This transition is driven by the minimization of the protein's free energy. The native state of a protein is typically the one with the lowest free energy and is stabilized by differences in entropy and enthalpy between the native state and the unfolded state.</p>
+									<head>
+										<meta name="viewport" content="width=device-width, initial-scale=1">
+										<style>
+										img {
+										  display: block;
+										  margin-left: auto;
+										  margin-right: auto;
+										}
+										</style>
+									</head>
+									<a class="image featured">
+										<figure>
+										  <img src="images/physic_fold.png" alt="" style="width:75%"/>
+										  <figcaption>Figure 1(a) Hydrophobic effect of Two folding states of the small protein. 1(b) Classical view of protein folding where the native state is favoured as the native state has a lower free energy than the unfolded state. 
+</figcaption>
+										</figure>
+									</a>
+									
+									<a href="#list" class="style2" align='right'>Back To Menu</a>
+									<p style="font-size:50px">	</p>
+									
+									<header class="style2" align="left">
+										<p id="2" style="font-size:25px; color:#484d55">Protein Structure Determination</p>
+									</header>
+									<p style="font-size:20px; color:#484d55">While experimentally determined protein structures provide valuable information for drug design and discovery, the process of obtaining these structures can be time-consuming and resource-intensive. The preparation of pure, stable protein samples is an important step in the process, and the experimental techniques themselves, such as X-ray crystallography or NMR spectroscopy, can also be time-consuming. Once the structures have been determined, they are typically deposited in the Protein Data Bank (PDB) as coordinate files for future reference and use in research and development. Despite the challenges, the use of experimentally determined protein structures as a starting point for drug design and discovery has led to significant advances in the field.</p>
+
+			
+									<a href="#list" class="style2" align='right'>Back To Menu</a>
+									<p style="font-size:50px; color:#484d55">	</p>
+										
+									<header class="style2" align="left">
+										<p id="3" style="font-size:25px; color:#484d55">Traditional and Deep Learning Approaches in Protein Design</p>
+									</header>
+									<p style="font-size:20px; color:#484d55">Traditional protein design seeks to maximize P(sequence|structure)
+by minimizing the energy of the target structure by Markov chain Monte Carlo (MCMC)-based search over side chain identities and conformations. The energy function is based on a combination of physical and statistical potentials, which are different types of energy terms that can be used to describe the behavior of the system. Physical potentials are based on physical laws and principles, such as the laws of motion and thermodynamics. They describe the energy of a system based on the positions, velocities, and other physical properties of the individual particles or atoms that make up the system. On the other hand, statistical potentials are based on statistical analysis of the properties of a large number of similar systems. They are used to approximate the energy of a particular system based on the probability that it will have certain properties or behavior. The capacity to generate diverse sequences and design multi-body interactions is a fundamental weakness of traditional protein design approaches. These restrictions have been lifted by deep learning approaches, which now provide enhanced design options.</p>
+
+									<p style="font-size:20px; color:#484d55">Deep learning is a type of artificial intelligence that is built on two key principles: representation learning, and learning through local gradient descent using backpropagation. In representation learning, the algorithm adapts features to capture the regularities relevant to a specific task, regularities refer to patterns or structures in the data. These features can be organized into levels, with each level representing a different level of abstraction. The second principle, learning through local gradient descent, involves updating the parameters of the model in small steps based on the error between the predicted and actual output. This process is called backpropagation.</p>
+									<p style="font-size:20px; color:#484d55">One challenge in deep learning is the "curse of dimensionality", which refers to the difficulty of learning generic functions in high-dimensional spaces. Given that the physical world has pre-defined regularities that arise from the underlying structure, exploiting these regularities, which often reflect the symmetries of a large system, can help to address the curse of dimensionality, which also forms the basis of most physical theories. The secret to breaking the curse lies in adapting neural networks to use low-dimensional geometry generated by physical measurements, for example, a grid in an image, a sequence in a time series, or position and structure in a molecule, and their associated symmetries, such as translations or rotations.</p>
+									<p style="font-size:20px; color:#484d55">Before proceeding, it is worth noting that our work leverages the underlying principle of geometric regularity of protein structure to construct different representations, and those representations were evaluated on a state-of-the-art neural network architecture for protein design, called ProteinMPNN.</p>
+									
+									<a href="#list" class="style2" align='right'>Back To Menu</a>
+									<p style="font-size:50px">	</p>
+									
+								</article>	
+			
+											<footer class="major">
+			
+												<ul class="actions special">
+													<li><a href="index.html" class="button style2">< Home</a></li>
+													<li><a href="background.html" class="button style2">Background ></a></li>
+												</ul>
+											</footer>
+							</div>
+
+					</div>
+				</div>
+
+			<!-- Highlights -->
+				<section id="highlights" class="wrapper style3">
+					<div class="title"></h1>Train of Thought</h1></div>
+					<div class="container">
+						<div class="row aln-center">
+							<div class="col-6 col-12-medium">
+								<section class="highlight">
+									<a href="intro-structure-determine.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<h3 align="left">Ever Wonder How Scientists Determine the Complex 3D Structures of Proteins?</h3>
+									<p style="font-size:18px; color:#484d55" align="left">Find out about the powerful techniques of X-ray crystallography and NMR and sources of uncertainty.</p>
+									<ul class="actions">
+										<li><a href="intro-structure-determine.html" class="button style1">Learn More</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="col-6 col-12-medium">
+								<section class="highlight">
+									<a href="intro-ml-dl.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<h3 align="left">Need A Refresher On Machine Learning and Deep Learning?</h3>
+									<p style="font-size:18px; color:#484d55" align="left">Join me on a journey to walk through these concepts with intuitive explanations that make it easy to learn and understand.</p>
+									<ul class="actions">
+										<li><a href="intro-ml-dl.html" class="button style1">Learn More</a></li>
+									</ul>
+								</section>
+							</div>
+						
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title"><h1>Contact Me</h1></div>
+					<div class="container">
+						<header class="style1">
+							<h2>I help people understand and apply AI </h2>
+							<p align="left">I'm eager to lend a hand to anyone with a physical or chemical science background who is interested in applying ML, DL, and RL to real-world situations. If you are interested in learning more about my background and experience in both academia and the corporate sector, please don't hesitate to contact me. I aim not only to stand on the shoulders of giants and innovate, but also to pave the way for like-minded peers. </p>
+							<p align="left">I'm also interested in working with you to implement AI-based solutions and enhancements for your organisation.</p> 
+						</header>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+
+								<!-- Contact Form -->
+									<section>
+										<form method="post" name="contact-form" action="https://formspree.io/f/xwkjezyb"  data-netlify-recaptcha="true"> 
+											<div class="row gtr-50">
+												<div class="col-6 col-12-small">
+													<input type="text" name="name" id="contact-name" placeholder="Name" />
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="text" name="email" id="contact-email" placeholder="Email" />
+												</div>
+												<div class="col-12">
+													<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><input type="submit" class="style1" value="Send" /></li>
+														<li><input type="reset" class="style2" value="Reset" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</section>
+
+							</div>
+							<div class="col-6 col-12-medium">
+
+								<!-- Contact -->
+									<section class="feature-list small">
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-home">Mailing Address</h3>
+													<p>
+														651, Point West<br />
+														South Kensington<br />
+														London, SW7 4XF
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-comment">Social</h3>
+													<p>
+														<a href="https://linkedin.com/in/xy2119" target="_blank">linkedin.com/in/xy2119</a><br />
+														<a href="https://twitter.com/Xinyan_xy2119" target="_blank">twitter.com/Xinyan_xy2119</a><br />
+														<a href="https://instagram.com/patricia__yxy" target="_blank">instagram.com/patricia__yxy</a>
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-envelope">Email</h3>
+													<p>
+														<a href="mailto:xy2119@ic.ac.uk">xy2119@ic.ac.uk</a><br />
+														<a href="mailto:pattyye219@gmail.com">pattyye219@gmail.com</a>
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-phone">Phone</h3>
+													<p>
+														<a href="tel: +44 07719613316">+44 07719613316</a><br />
+														<a href="tel: +86 18258692966">+86 18258692966</a>
+													</p>
+												</section>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+						<div id="copyright">
+							<ul>
+								<li>&copy;Xinyan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

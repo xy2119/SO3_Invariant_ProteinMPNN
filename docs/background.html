@@ -1,0 +1,330 @@
+
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xinyan's Reasearch Profile by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+					<!-- Logo -->
+						<div id="logo">
+							
+							<p style="font-size:60px">  </p>
+							<h1><a href="index.html">Xinyan Ye</a></h1>
+							<p style="font-size:21px">Imperial College London</p>
+							<p style="font-size:21px">Molecular Representation & Geometric Deep Learning</p>
+							<p style="font-size:10px">  </p>
+							
+							<ul class="icons">
+								
+								<a href="https://www.linkedin.com/in/xy2119" class="icon brands fa-linkedin alt" align="middle"></a>
+								<a href="https://github.com/xy2119" class="icon brands fa-github alt" align="middle"></a>
+								<a href="https://twitter.com/Xinyan_xy2119" class="icon brands fa-twitter alt" align="middle" style=></a>
+								
+							</ul>
+						</div>
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="intro.html">Introduction</a></li>
+								<li><a href="background.html">Background</a></li>
+								<li><a href="method.html">Methodology</a></li>
+								<li><a href="experiments.html">Experiments</a></li>
+								<li>
+									<a href="aboutme.html">About Me</a>
+									<ul>
+										<li><a href="aboutme.html#edu">Education</a></li>
+										<li><a href="aboutme.html#main">Highlights</a></li>
+										<li><a href="aboutme.html#ambitions">Ambitions</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+
+				</section>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style2">
+					<div><h1 class="title">Background</h1></div>
+					<div class="container">
+						<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<header class="style1">
+										<h2>Geometric Deep Learning on Protein Design</h2>
+										<p style="font-size:25px; color:grey">Supervisor: <a href="https://www.imperial.ac.uk/people/s.angioletti-uberti">Prof. Stefano Angioletti-Uberti</a></p>
+										<p style="font-size:22px; color:grey"> Graph Neural Networks | Invariant and Equivariant | Representation Theory</p>
+										<p style="font-size:22px; color:grey">Building Rotation Invariant Representation for Inverse Protein Folding Using Spherical Harmonics</p>
+									</header>
+									
+									<p id="list" style="font-size:25px; color:#484d55">List of Contents</p>
+									<ol style="text-align: left">
+										<li><a href="#1" style="color:#484d55">Graph Neural Networks for Atomic Systems</a></li>
+										<li><a href="#2" style="color:#484d55">Invariant and Equivariant Neural Networks</a></li>
+										<li><a href="#3" style="color:#484d55">Irreducible Representaion on SO(3) and Spherical Harmonics</a></li>
+										<li><a href="#4" style="color:#484d55">L2-norm of the Spherical Harmonics Expansion</a></li>
+										<li><a href="#highlights" style="color:#484d55">Train of Thought</a></li>
+									</ol>
+									
+									<header class="style2" align="left">
+										<p style="font-size:50px">	</p>
+										<p id="1" style="font-size:25px; color:#484d55">Graph Neural Networks for Atomic Systems</p>
+									</header>
+									
+									<p style="font-size:20px; color:#484d55">Graph neural networks (GNNs) are a type of neural network that are designed to process data that is represented in the form of a graph. In a graph <span class="math inline">𝒢 = (𝒱, ℰ)</span> , the data is represented as a set of nodes (also called vertices)  <span class="math inline"><em>i</em> ∈ 𝒱</span> , and the connections between the nodes are represented as edges <span class="math inline">(<em>i</em>, <em>j</em>) ∈ ℰ</span>. GNNs operate on graphs by passing messages between the nodes in the graph. These messages are used to update the representation of each node, aggregating the representations of its neighboring nodes. This process of message passing is repeated over multiple layers, with each layer updating the node representations based on the representations of its neighbors in the previous layer. Given feature <span
+class="math inline"><em>f</em><sub><em>i</em></sub><sup><em>l</em></sup></span>
+on node <span class="math inline"><em>i</em></span> and edge feature
+<span
+class="math inline"><em>e</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup></span>
+at the <span class="math inline"><em>l</em></span>-th layer, it first
+aggregates messages <span
+class="math inline"><em>m</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup></span>
+from neighbors and then update features on each node as follows:</p>
+									<p style="font-size:20px; color:#484d55"><span
+class="math display"><em>m</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup> = <em>ϕ</em><sub><em>m</em></sub>(<em>f</em><sub><em>i</em></sub><sup><em>l</em></sup>,<em>f</em><sub><em>j</em></sub><sup><em>l</em></sup>,<em>e</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup>)  
+and
+  <em>f</em><sub><em>i</em></sub><sup><em>l</em> + 1</sup> = <em>ϕ</em><sub><em>u</em></sub>(<em>f</em><sub><em>i</em></sub><sup><em>l</em></sup>,∑<sub><em>j</em> ∈ 𝒩(<em>i</em>)</sub><em>m</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup>)</span></p>
+<p style="font-size:20px; color:#484d55">where <span class="math inline">𝒩(<em>i</em>)</span> denotes the set
+of neighbors of node <span class="math inline"><em>i</em></span> and
+<span class="math inline"><em>ϕ</em><sub><em>m</em></sub></span> and
+<span class="math inline"><em>ϕ</em><sub><em>u</em></sub></span> are
+learnable functions.</p>
+
+									<p style="font-size:20px; color:#484d55">A graph permutation means re-ordering the nodes. Permutation invariance of GNNs means that the output of is not affected by order of the nodes in the input graph. This permutation invariance is ensured by aggregating functions.</p>
+									<p style="font-size:20px; color:#484d55">They are well suited for property prediction of atomic systems because they can handle both discrete and topological structures, which are commonly found in atomic systems. There are two main ways to represent atomic systems as graphs: 2D chemical bond graphs and 3D spatial graphs. 2D Chemical bond graphs, represent atomic systems as a set of nodes, with each node representing an atom, and edges representing chemical bonds between atoms. These graphs capture the chemical structure of the system, but do not consider the spatial arrangement of the atoms. 3D spatial graphs, on the other hand, represent atomic systems as a set of nodes arranged in 3D space, with edges representing the spatial relationships between the nodes. These graphs enabled representation of the geometric relationships between atoms in a molecule or crystal, but the key challenge in moving from 2D chemical bonding graphs to 3D spatial graphs is to remain invariant or equivalent to the geometric transformations acting on atom positions, in other words, be equivariant to the Euclidean group E(3) of rigid motions (rotations, translations, and reflections) in addition to the standard permutation equivariance.</p>
+									
+									<a href="#list" class="style2" align='right'>Back To Menu</a>
+									<p style="font-size:50px">	</p>
+									
+									<header class="style2" align="left">
+										<p style="font-size:50px">	</p>
+										<p id="2" style="font-size:25px; color:#484d55">Invariant and Equivariant Neural Networks</p>
+									</header>
+									
+									<p style="font-size:20px; color:#484d55">Invariant neural networks and equivariant neural networks are types of neural networks that have been proposed for use with 3D atomistic graphs.</p>
+									<p style="font-size:20px; color:#484d55">Invariant neural networks operate on invariant information, such as distances and angles between atoms. This means that they are designed to produce the same output regardless of the orientation or position of the atomic system in space. This can be useful for predicting properties that are independent of the orientation of the atomic system, such as its energy levels or bond lengths.</p>
+									<p style="font-size:20px; color:#484d55">Equivariant neural networks, on the other hand, operate on geometric tensors like type-L vectors. These tensors encode information about the orientation and position of the atomic system in space, and the neural network is designed to be equivariant to changes in the orientation and position of the atomic system. This can be useful for predicting properties that depend on the orientation of the atomic system, such as its vibrational frequencies or electromagnetic properties.</p>
+									<p style="font-size:20px; color:#484d55">In previous work, invariant graph neural networks constructed for 3D atomic graphs can be divided to reply on different geometric information such as distances [SchNet,], bond angles [DimeNet] or dihedral angles [SphereNet, GemNet], and symmetry groups [Equiformer]. Our work falls into the category of exploring symmetry, more specifically irreducible representation, to reduce the dimension of representation and therefore simplify graph structure of generic GNNs.</p>
+
+									<head>
+										<meta name="viewport" content="width=device-width, initial-scale=1">
+										<style>
+										img {
+										  display: block;
+										  margin-left: auto;
+										  margin-right: auto;
+										}
+										</style>
+									</head>
+									<a class="image featured">
+										<figure>
+										  <img src=" " alt="" style="width:75%"/>
+										  <figcaption>
+</figcaption>
+										</figure>
+									</a>
+									
+									<a href="#list" class="style2" align='right'>Back To Menu</a>
+									<p style="font-size:50px">	</p>
+									
+									<header class="style2" align="left">
+										<p style="font-size:50px">	</p>
+										<p id="3" style="font-size:25px; color:#484d55">Irreducible Representaion on SO(3) and Spherical Harmonics</p>
+									</header>
+									
+									<p style="font-size:20px; color:#484d55">Irreducible representations (irreps) of the special orthogonal group SO(3) describe how objects or functions can transform under rotations in 3D space.</p>
+									<p style="font-size:20px; color:#484d55">Spherical harmonics is a generalization of form of the Fourier series, where the sines and cosines are replaced by more general functions that are  defined in terms of spherical coordinates rather than Cartesian coordinates. Spherical harmonics are functions defined on the surface of a sphere that form a complete set of irreps of SO(3). This means that any function defined on the surface of a sphere can be represented as a linear combination of spherical harmonics, and these harmonics capture all of the possible rotational symmetries of the function.</p>
+									<p style="font-size:20px; color:#484d55">In the context of quantum mechanics, the relationship between irreps and spherical harmonics can be understood as follows: each irrep of the rotation group corresponds to a unique set of spherical harmonics, which are used to describe the angular dependence of the wavefunction for a particle confined to a spherical region. Specifically, each irrep of the rotation group is characterized by a unique set of quantum numbers, the total angular momentum quantum number (l) and the z-component of the angular momentum quantum number (m),  where l is the degree and m is the order of the spherical harmonics. The dimension of the irrep is equal to 2l + 1, and the spherical harmonics in the irrep are labeled by the index m, which ranges from -l to l.</p>
+									<p style="font-size:20px; color:#484d55">Clebsch-Gordan decompositions are used to decompose data with a group symmetry, such as data on a sphere or manifold, into irreps of the symmetry group. Specifically, Clebsch-Gordan coefficients are used to decompose the tensor product of two irreps of a group into a direct sum of irreps.</p>
+									<p style="font-size:20px; color:#484d55">The relationship between irreps of SO(3), spherical harmonics and Clebsch-Gordan decompositions can be understood as follows: spherical harmonics provide a generic basis for representing functions on the surface of a sphere that are invariant under rotations. When data on a sphere is decomposed using Clebsch-Gordan decompositions, the resulting decomposition can be expressed in terms of spherical harmonics, which capture the rotational symmetries of the data. This makes it possible to use standard neural networks to process the decomposed data, allowing for more efficient and effective analysis of the data.</p>
+
+									<a href="#list" class="style2" align='right'>Back To Menu</a>
+									<p style="font-size:50px; color:#484d55">	</p>
+									
+									<header class="style2" align="left">
+										<p style="font-size:50px">	</p>
+										<p id="4" style="font-size:25px; color:#484d55">L2-norm of the Spherical Harmonics Expansion</p>
+									</header>
+									
+									<p style="font-size:20px; color:#484d55">The L2-norm of a spherical harmonics expansion is the sum of the squares of the coefficients in the expansion. It is a measure of the smoothness of the expansion and is often used to regularize the expansion, especially in inverse problems where the expansion is used to approximate some underlying field.</p>
+									
+									<p style="font-size:20px; color:#484d55"><span class="math inline">||a||<sup>2</sup> = <span>&#8721;</span><sub><em>l</em></sub> <span>&#8721;</span><sub><em>m</em></sub> |a<sub><em>lm</em></sub>|<sup>2</sup></span></p>
+									<p style="font-size:20px; color:#484d55">where l is the degree, m is the order and a<sub><em>lm</em></sub> is the coefficient of the spherical harmonics expansion.</p>
+									
+									<p style="font-size:20px; color:#484d55">The L2-norm can be interpreted as a generalization of the concept of the Euclidean norm (length), for multi-dimensional vectors. In the case of spherical harmonic expansion, the expansion coefficient vector is a multi-dimensional vector in a space where each coefficient a<sub><em>lm</em></sub> corresponds to a dimension. The L2-norm is a measure of the length of the expansion vector in this high-dimensional space.</p>
+									
+									<p style="font-size:20px; color:#484d55">The L2-norm of a spherical harmonics expansion has properties that make it useful for analyzing spherical harmonics expansions:</p>
+									<ol style="text-align: left">
+										<li><a style="font-size:20px; color:#484d55">It is always non-negative: ||a||<sup>2</sup> >= 0.</a></li>
+										<li><a style="font-size:20px; color:#484d55">It is equal to zero if and only if all of the coefficients a<sub><em>lm</em></sub> are zero: ||a||<sup>2</sup> = 0 if and only if a<sub><em>lm</em></sub> = 0 for all l and m.</a></li>
+										<li><a style="font-size:20px; color:#484d55">It is invariant under rotation: rotating the field represented by the expansion does not change the L2-norm.</a></li>
+										<li><a style="font-size:20px; color:#484d55">It is additive: the L2-norm of the sum of two expansions is equal to the sum of the L2-norms of the individual expansions.</a></li>
+								
+									</ol>
+
+									<a href="#list" class="style2" align='right'>Back To Menu</a>
+									<p style="font-size:50px; color:#484d55">	</p>
+										
+									
+								</article>	
+			
+											<footer class="major">
+			
+												<ul class="actions special">
+													<li><a href="intro.html" class="button style2">< Introduction</a></li>
+													<li><a href="method.html" class="button style2">Methodology ></a></li>
+												</ul>
+											</footer>
+							</div>
+
+					</div>
+				</div>
+
+			<!-- Highlights -->
+				<section id="highlights" class="wrapper style3">
+					<div class="title"></h1>Train of Thought</h1></div>
+					<div class="container">
+						<div class="row aln-center">
+							
+							<div class="col-6 col-12-medium">
+								
+								<section class="highlight">
+									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+									<h3><a href="#">How Data Are Being Lifted into Groups?</a></h3>
+									<p style="font-size:18px; color:#484d55" align="left">Explore the concept of group lifting with an intuitive example using spherical data and SO(3) symmetry</p>
+									<ul class="actions">
+										<li><a href="background-group-lifting.html" class="button style1">Learn More</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="col-6 col-12-medium">
+								<section class="highlight">
+									<a href="" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<h3 align="left"> Wigner D-Matrices, or Spherical Harmonics?</h3>
+									<p style="font-size:18px; color:#484d55" align="left">Explore the role of Wigner D-Matrices and Spherical Harmonics in describing angular momentum states</p>
+									<ul class="actions">
+										<li><a href="background-wignerD-SH.html" class="button style1">Learn More</a></li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title"><h1>Contact Me</h1></div>
+					<div class="container">
+						<header class="style1">
+							<h2>I help people understand and apply AI </h2>
+							<p align="left">I'm eager to lend a hand to anyone with a physical or chemical science background who is interested in applying ML, DL, and RL to real-world situations. If you are interested in learning more about my background and experience in both academia and the corporate sector, please don't hesitate to contact me. I aim not only to stand on the shoulders of giants and innovate, but also to pave the way for like-minded peers. </p>
+							<p align="left">I'm also interested in working with you to implement AI-based solutions and enhancements for your organisation.</p> 
+						</header>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+
+								<!-- Contact Form -->
+									<section>
+										<form method="post" name="contact-form" action="https://formspree.io/f/xwkjezyb"  data-netlify-recaptcha="true"> 
+											<div class="row gtr-50">
+												<div class="col-6 col-12-small">
+													<input type="text" name="name" id="contact-name" placeholder="Name" />
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="text" name="email" id="contact-email" placeholder="Email" />
+												</div>
+												<div class="col-12">
+													<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><input type="submit" class="style1" value="Send" /></li>
+														<li><input type="reset" class="style2" value="Reset" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</section>
+
+							</div>
+							<div class="col-6 col-12-medium">
+
+								<!-- Contact -->
+									<section class="feature-list small">
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-home">Mailing Address</h3>
+													<p>
+														651, Point West<br />
+														South Kensington<br />
+														London, SW7 4XF
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-comment">Social</h3>
+													<p>
+														<a href="https://linkedin.com/in/xy2119" target="_blank">linkedin.com/in/xy2119</a><br />
+														<a href="https://twitter.com/Xinyan_xy2119" target="_blank">twitter.com/Xinyan_xy2119</a><br />
+														<a href="https://instagram.com/patricia__yxy" target="_blank">instagram.com/patricia__yxy</a>
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-envelope">Email</h3>
+													<p>
+														<a href="mailto:xy2119@ic.ac.uk">xy2119@ic.ac.uk</a><br />
+														<a href="mailto:pattyye219@gmail.com">pattyye219@gmail.com</a>
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-phone">Phone</h3>
+													<p>
+														<a href="tel: +44 07719613316">+44 07719613316</a><br />
+														<a href="tel: +86 18258692966">+86 18258692966</a>
+													</p>
+												</section>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+						<div id="copyright">
+							<ul>
+								<li>&copy;Xinyan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

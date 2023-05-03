@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xinyan's Reasearch Profile by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+					<!-- Logo -->
+						<div id="logo">
+							
+							<p style="font-size:60px">  </p>
+							<h1><a href="index.html">Xinyan Ye</a></h1>
+							<p style="font-size:21px">Imperial College London</p>
+							<p style="font-size:21px">Molecular Representation & Geometric Deep Learning</p>
+							<p style="font-size:10px">  </p>
+							
+							<ul class="icons">
+								
+								<a href="https://www.linkedin.com/in/xy2119" class="icon brands fa-linkedin alt" align="middle"></a>
+								<a href="https://github.com/xy2119" class="icon brands fa-github alt" align="middle"></a>
+								<a href="https://twitter.com/Xinyan_xy2119" class="icon brands fa-twitter alt" align="middle" style=></a>
+								
+							</ul>
+						</div>
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="intro.html">Introduction</a></li>
+								<li><a href="background.html">Background</a></li>
+								<li><a href="method.html">Methodology</a></li>
+								<li><a href="experiments.html">Experiments</a></li>
+								<li>
+									<a href="aboutme.html">About Me</a>
+									<ul>
+										<li><a href="aboutme.html#edu">Education</a></li>
+										<li><a href="aboutme.html#main">Highlights</a></li>
+										<li><a href="aboutme.html#ambitions">Ambitions</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div><h1 class="title">Background</h1></div>
+					<div class="container">
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<div id="sidebar">
+										<section class="box">
+											<header>
+												<h2>Train of Thought</h2>
+											</header>
+											<p style="font-size:20px; color:grey">Explore the concept of group lifting with an intuitive example using spherical data and SO(3) symmetry</p>
+											<a href="background.html" class="button style2">Go Back</a>
+										</section>
+										
+									
+									</div>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<header class="style1">
+										<h2>Geometric Deep Learning on Protein Design</h2>
+										
+										
+										<p style="font-size:16px; color:grey">Protein Folding | Deep Neural Networks | Curse of Dimensionality | Representation Learning</p>
+										<p style="font-size:50px; color:grey">   </p>
+										<p style="font-size:25px; color:#484d55">Concept of Group Lifting with Spherical Data and the Symmetry Group SO(3)</p>
+										<header class="style2" align="left">
+										
+										</header>
+									</header>
+											
+									<p style="font-size:20px; color:#484d55">In the context of group representation theory, group lifting refers to the process of raising a representation of a group from one group to another group that is a covering group of the original group. The idea is to start with a group G and a subgroup H, and find a way to extend the representation of H to a representation of G. The representation of H is called the "base representation" and the representation of G is called the "lifted representation". The lifted representation is usually more general and has more degrees of freedom than the base representation.</p>
+									<p style="font-size:20px; color:#484d55">In the context of deep learning, geometric deep learning in particular, the representation of an object can be lifted from a lower-dimensional subspace to a higher-dimensional space, allowing for more accurate and robust downstream task performance. One intuitive example of group lifting can be explained using spherical data and SO(3) symmetry:</p>
+									<p style="font-size:20px; color:#484d55">Imagine you have a dataset of spherical images, and you want to classify these images into different categories. One way to do this is to use the SO(3) symmetry group, which is the group of all rotations in 3D space. The SO(3) symmetry group is a covering group of the group of 2D spherical coordinates, meaning that it is a group that is an extension of the group of 2D spherical coordinates by adding the information about the rotation. The base representation of the spherical images would be the 2D spherical coordinates, which only contain information about the latitude and longitude of the spherical image. However, these coordinates are not invariant to rotations, meaning that if you rotate the spherical image, the coordinates will change.</p>
+									<p style="font-size:20px; color:#484d55">To improve the accuracy of classification, you can lift the base representation of the spherical images to a higher-dimensional space using the SO(3) symmetry group. The lifted representation would include not only the 2D spherical coordinates, but also additional information about the rotation of the spherical image. This lifted representation is now invariant to rotations, meaning that the coordinates will not change if the image is rotated. </p>
+									
+									<p style="font-size:20px; color:#484d55">When the data on the sphere is lifted into the group SO(3), each point on the sphere is associated with a group element, which is a rotation that takes the north pole to that point. However, because of the symmetry of the sphere, many points on the sphere can be rotated to the same location. For example, the north and south poles are both mapped to the identity rotation, and all points on the equator are mapped to rotations about the z-axis. As a result, each point in the space is associated with multiple group elements, leading to a redundant representation of the data.</p>
+									<p style="font-size:20px; color:#484d55">This redundancy can be reduced by applying a technique called "group equivariant network" which is a specific form of group lifting that allows for a more efficient representation of the data by being equivariant to the group action. In group equivariant networks, the input data is transformed by a group action, and the network is designed to be equivariant to that action. This allows the network to learn representations that are invariant to certain symmetries, while still being sensitive to other symmetries, thus reducing the redundancy in the representation.</p>
+									<p style="font-size:20px; color:#484d55">In brief, group lifting is a powerful technique that allows to extend the representation of a group to a covering group to take into account the symmetry of the group (in this case, rotations). One intuitive example is lifting the base representation of the spherical images to a higher-dimensional space using the SO(3) symmetry group. This extended representation is more robust to variations in the geometric data and allows for more accurate prediction. However, it can also lead to a redundant representation of the data due to the symmetry of the group, this redundancy can be reduced by using a group equivariant network.</p>
+								</article>
+								
+								<section class="box">
+											
+									<a href="background.html" class="button style2">Go Back</a>
+								</section>
+			
+														
+								
+							</div>
+						
+						</div>
+					</div>
+					</div>
+				</section>
+
+			
+
+
+						<div id="copyright">
+							<ul>
+								<li>&copy;Xinyan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+				
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
